@@ -220,22 +220,7 @@
         </div>
 
         <!-- Charts & Tables Row -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-            <!-- Sales Chart -->
-            <div class="lg:col-span-2 card bg-white p-6">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="font-bold text-gray-800">Sales Overview</h3>
-                    <div class="flex space-x-2">
-                        <button class="px-3 py-1 text-xs bg-blue-100 text-blue-600 rounded-md sales-period active-period" data-period="daily">Daily</button>
-                        <button class="px-3 py-1 text-xs bg-gray-100 text-gray-600 rounded-md sales-period" data-period="weekly">Weekly</button>
-                        <button class="px-3 py-1 text-xs bg-gray-100 text-gray-600 rounded-md sales-period" data-period="monthly">Monthly</button>
-                    </div>
-                </div>
-                <div class="h-80">
-                    <canvas id="sales-chart"></canvas>
-                </div>
-            </div>
-
+        <div class="grid grid-cols-1 lg:grid-cols-1 gap-6 mb-8">
             <!-- Recent Sales -->
             <div class="card bg-white p-6">
                 <div class="flex justify-between items-center mb-6">
@@ -275,113 +260,7 @@
         </div>
 
         <!-- Bottom Row -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-            <!-- Top Products Table -->
-            <div class="card bg-white p-6">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="font-bold text-gray-800" data-translate="top_products">Top Products</h3>
-                    <select class="px-3 py-1 text-xs border border-gray-300 rounded-md focus:outline-none">
-                        <option value="revenue" data-translate="by_revenue">By Revenue</option>
-                        <option value="quantity" data-translate="by_quantity">By Quantity</option>
-                    </select>
-                </div>
-                <div class="overflow-x-auto">
-                    <table class="min-w-full">
-                        <thead>
-                            <tr class="border-b">
-                                <th class="px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
-                                <th class="px-2 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Sales</th>
-                                <th class="px-2 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Revenue</th>
-                                <th class="px-2 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Growth</th>
-                            </tr>
-                        </thead>
-                        <tbody id="top-products">
-                            <!-- Top products will be populated here by JavaScript -->
-                            <tr class="border-b">
-                                <td class="px-2 py-4 whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <div class="h-10 w-10 flex-shrink-0 bg-gray-100 rounded-md overflow-hidden">
-                                            <img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.11.0/flags/4x3/br.svg" class="h-10 w-10 object-cover">
-                                        </div>
-                                        <div class="ml-3">
-                                            <div class="text-sm font-medium text-gray-900">Samsung Galaxy S23 Ultra</div>
-                                            <div class="text-xs text-gray-500">Smartphones</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-2 py-4 whitespace-nowrap text-right text-sm font-medium">243</td>
-                                <td class="px-2 py-4 whitespace-nowrap text-right text-sm font-medium">R$ 47,385.00</td>
-                                <td class="px-2 py-4 whitespace-nowrap text-right">
-                                    <span class="text-green-500 text-sm flex items-center justify-end">
-                                        <i class="fas fa-arrow-up mr-1"></i> 24%
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr class="border-b">
-                                <td class="px-2 py-4 whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <div class="h-10 w-10 flex-shrink-0 bg-gray-100 rounded-md overflow-hidden">
-                                            <img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.11.0/flags/4x3/br.svg" class="h-10 w-10 object-cover">
-                                        </div>
-                                        <div class="ml-3">
-                                            <div class="text-sm font-medium text-gray-900">Apple iPhone 15 Pro</div>
-                                            <div class="text-xs text-gray-500">Smartphones</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-2 py-4 whitespace-nowrap text-right text-sm font-medium">197</td>
-                                <td class="px-2 py-4 whitespace-nowrap text-right text-sm font-medium">R$ 43,142.00</td>
-                                <td class="px-2 py-4 whitespace-nowrap text-right">
-                                    <span class="text-green-500 text-sm flex items-center justify-end">
-                                        <i class="fas fa-arrow-up mr-1"></i> 18%
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr class="border-b">
-                                <td class="px-2 py-4 whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <div class="h-10 w-10 flex-shrink-0 bg-gray-100 rounded-md overflow-hidden">
-                                            <img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.11.0/flags/4x3/br.svg" class="h-10 w-10 object-cover">
-                                        </div>
-                                        <div class="ml-3">
-                                            <div class="text-sm font-medium text-gray-900">Sony WH-1000XM5</div>
-                                            <div class="text-xs text-gray-500">Headphones</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-2 py-4 whitespace-nowrap text-right text-sm font-medium">154</td>
-                                <td class="px-2 py-4 whitespace-nowrap text-right text-sm font-medium">R$ 31,878.00</td>
-                                <td class="px-2 py-4 whitespace-nowrap text-right">
-                                    <span class="text-green-500 text-sm flex items-center justify-end">
-                                        <i class="fas fa-arrow-up mr-1"></i> 12%
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr class="border-b">
-                                <td class="px-2 py-4 whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <div class="h-10 w-10 flex-shrink-0 bg-gray-100 rounded-md overflow-hidden">
-                                            <img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.11.0/flags/4x3/br.svg" class="h-10 w-10 object-cover">
-                                        </div>
-                                        <div class="ml-3">
-                                            <div class="text-sm font-medium text-gray-900">Xiaomi Redmi Note 12</div>
-                                            <div class="text-xs text-gray-500">Smartphones</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-2 py-4 whitespace-nowrap text-right text-sm font-medium">136</td>
-                                <td class="px-2 py-4 whitespace-nowrap text-right text-sm font-medium">R$ 18,496.00</td>
-                                <td class="px-2 py-4 whitespace-nowrap text-right">
-                                    <span class="text-red-500 text-sm flex items-center justify-end">
-                                        <i class="fas fa-arrow-down mr-1"></i> 3%
-                                    </span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
+        <div class="grid grid-cols-1 lg:grid-cols-1 gap-6 mb-8">
             <!-- Regional Sales Distribution -->
             <div class="card bg-white p-6">
                 <div class="flex justify-between items-center mb-6">
@@ -663,15 +542,19 @@
                         x: {
                             grid: {
                                 display: false
+                            },
+                            ticks: {
+                                display: false
                             }
                         },
                         y: {
                             beginAtZero: true,
-                            max: 150, // Set max value to show better scale for our values
+                            max: 150,
                             ticks: {
-                                callback: function(value) {
-                                    return 'R$ ' + value.toLocaleString('pt-BR');
-                                }
+                                display: false
+                            },
+                            grid: {
+                                display: false
                             }
                         }
                     }
@@ -852,10 +735,6 @@
 
         // Initialize dashboard
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize charts
-            initSalesChart('daily');
-            initRegionalChart();
-            
             // Update timestamps
             updateLastUpdateTime();
             updateDBSyncTime();
@@ -865,25 +744,6 @@
             
             // Start adding sales
             setTimeout(addNewSale, 5000); // Start first sale after 5 seconds
-            
-            // Chart period selectors
-            document.querySelectorAll('.sales-period').forEach(button => {
-                button.addEventListener('click', function() {
-                    const period = this.dataset.period;
-                    
-                    // Update active button
-                    document.querySelectorAll('.sales-period').forEach(btn => {
-                        btn.classList.remove('bg-blue-100', 'text-blue-600');
-                        btn.classList.add('bg-gray-100', 'text-gray-600');
-                    });
-                    
-                    this.classList.remove('bg-gray-100', 'text-gray-600');
-                    this.classList.add('bg-blue-100', 'text-blue-600');
-                    
-                    // Update chart
-                    initSalesChart(period);
-                });
-            });
         });
 
         // Simulate database sync every few minutes
